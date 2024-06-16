@@ -1,0 +1,35 @@
+# Titre
+Un dernier tour de piste
+
+# Descriptif court
+C'est la dernière course d'une saison éreintante. La plus belle des courses. La plus prestigieuse. La Championne a tout gagné depuis le début, mais vous allez tenter votre chance.
+3.2.1.Go ! 
+
+# Descriptif long
+C'est la dernière course d'une saison éreintante. La plus belle des courses. La plus prestigieuse. La Championne a tout gagné depuis le début, mais vous allez tenter votre chance.
+3.2.1.Go ! 
+Vivez la course en direct tout en vous rappelant les moments forts de la saison, les à-côtés de la piste, vos échecs et vos réussites, vos relations avec les autres coureurs.
+La Championne gagnera cette course, évidemment. Mais quelle image laisserez-vous ?
+
+Un jeu par Nicolas "Gulix" Ronvel
+WIP v0.2
+
+
+***********************************
+********* ENGLISH VERSION *********
+***********************************
+# Title
+Final lap
+
+# Descriptif court
+It's the last race of a rough season. It's the most important of all races. The most prestigious one. The Champion won every race this season, but you're going to take your chances.
+3.2.1.Go ! 
+
+# Descriptif long
+It's the last race of a rough season. It's the most important of all races. The most prestigious one. The Champion won every race this season, but you're going to take your chances.
+3.2.1.Go ! 
+Experience the race live while remembering the highlights of the season, the sidelines of the circuit, your failures and successes, your relationships with other racers.
+The Champion will win this race, of course. But what is your legacy going to be?
+
+A game by Nicolas "Gulix" Ronvel
+WIP v0.2

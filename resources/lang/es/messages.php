@@ -1,0 +1,38 @@
+<?php
+
+return [
+    'nouvellepartie' => 'Nuevo juego',
+    'rejoindre' => 'Unirse',
+    'Historique' => 'historial',
+    'titrerejoindre' => 'Unirse a un juego',
+    'rejoindreplaceholder' => 'Introducir un código para unirse a un un juego',
+    'ensavoirplus' => "más información",
+    'jouer' => 'Jugar',
+    'Precedente' => 'Anterior',
+    'suivant' => 'Siguiente',
+    'jeuxdispos' => 'Juegos disponibles',
+    'jeuxdisposintro' => 'Todos los juegos de esta aplicación se derivan del juego For The Queen de Alex Roberts, publicado por Evil Hat Production.  <br><a href="https://forthequeengame.com/" target="_blank">Leer la licencia </a>',
+    'telecargador' => 'Descargar PDF',
+    'duree' => 'Elegir la duración',
+    'playtexte1' => 'El juego comenzará ahora',
+    'playtexte2' => 'Otros jugadores pueden unirse al juego con el siguiente código :',
+    'cartex' => 'Tarjeta X',
+    'cartefinale' => 'Tarjeta final',
+    'languefr' => 'Français',
+    'langueen' => 'English',
+    'menuaide' => 'Ayuda',
+    'menucreersonjeu' => 'Crear un juego',
+    'Login' => 'Login',
+    'aidetexte' => 'Cómo jugar?',
+    'Historiquetexte' => 'Seguir las nuevas características',
+    "Propulse" =>"Powered with ❤ by cestpasdujdr.fr",
+    'mentionslegales' => 'Legal',
+    'joindreplaceholder' => 'GAME CODE',
+    'duree1' => 'Rápido - unas 10 tarjetas ( < 1 hora)',
+    'duree2' => 'Promedio - alrededor de 20 tarjetas ( 2 horas)',
+    'duree3' => 'Long - unas 30 tarjetas ( 3 horas)',
+    'duree4' => 'Realmente largo - todas las cartas ( > 4 horas)',
+    'creerjeu' => 'Crear un juego',
+
+];
+

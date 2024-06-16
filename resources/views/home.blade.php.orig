@@ -1,0 +1,228 @@
+@extends('bootstrap')
+
+@section('title', '| Liste des Droits')
+
+@section('content')
+    <div id="panel1" data-parallax="true" >
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-0">{{ config('app.name') }}</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <img class="img-fluid illustration-principale" src="{{ url('images/ftq-light.png') }}" alt="3 cartes montrant 3 Reines">
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button id="next3" class="btn btn-primary my-2">Nouvelle partie</button>
+                    </div>
+                    <div class="col-xs-6 ml-2">
+                        <button id="next2" class="btn btn-secondary my-2">Rejoindre</button>
+                    </div>
+                </div>
+                <a href="{{route('changelog')}}" class="text-center text-white mt-2" id="changelog"><i class="fas fa-arrow-right"></i> Historique</a>
+            </div>
+        </header>
+
+    </div>
+
+    <div id="panel2" data-parallax="true" style="display:none; background-color:#787978; background-image: url('{{config('app.fond_ecran')}}')">
+
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-0">{{ config('app.name') }}</h1>
+
+                @if(session('flash_errors'))
+                    <div class="form-group">
+                        @if( !is_array( session('flash_errors')))
+
+                            <div class="alert alert-danger">
+                                {{ session('flash_errors') }}
+                            </div>
+                        @else
+                            @foreach( session('flash_errors') as $erreur )
+                                <div class="alert alert-danger">
+                                    {{ $erreur }}
+                                </div>
+                            @endforeach
+                        @endif
+
+                    </div>
+                @endif
+
+                <form method="post" id="form_goto_session" action="{{ route('session') }}" class="mt-4">
+                    @csrf
+                    <h2>Rejoindre une partie</h2>
+                    <input type="text" class="form-control m-input text-center text-uppercase" id="code_room" name="code_room" placeholder="code de la partie" data-toggle="tooltip" data-placement="right" title="Entre ici le code d'une partie en cours pour la rejoindre">
+
+                    <button class="btn btn-primary mt-4" id="next2"> Rejoindre </button>
+                </form>
+
+            </div>
+        </header>
+
+    </div>
+
+    <div id="panel3" data-parallax="true" style="display:none; background-color:#787978; background-image: url('{{config('app.fond_ecran')}}')">
+
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+
+                <form method="post" id="form_goto_session_jeu" action="{{ route('session') }}">
+                    <input type="hidden" id="jeu_choisi" name="jeu_choisi" value="">
+                    @csrf
+
+                    <div id="carouselJeu" class="carousel slide carousel-fade" >
+
+                        <div class="carousel-inner">
+                            @foreach( $jeux_dispo as $clef => $jeu )
+                                <div class="carousel-item  @if($clef == 0)) active @endif">
+                                    <div class="cartejeu my-2  p-relative bg-white shadow-1" style="overflow: hidden; border-radius: 1px;">
+                                        @if( $jeu->image != '') <img src="{{ $jeu->image }}" alt="" class="w-full illustration-jeu"> @endif
+                                        <div class="px-2 py-2">
+                                            <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                                                <a href="{{route('listejeux')}}#jeu_{{$jeu->id}}">en savoir plus</a>
+                                            </p>
+
+                                            <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                                                {{ $jeu->jeu }}
+                                            </h1>
+
+                                            <p class="mb-1 text-black intro">
+                                                {!!  $jeu->intro  !!}
+                                            </p>
+                                        </div>
+                                        <button class="btn btn-primary mt-2 mb-2 btn-lg  selecteur_jeu_choisi" value="{{ $jeu->id }}"> Jouer </button>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+
+                    </div>
+
+
+                </form>
+
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button id="next3" class="btn btn-primary my-2 " href="#carouselJeu" role="button" data-slide="prev" title="Précédent">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                    <div class="col-xs-6 ml-2">
+                        <button id="next2" class="btn btn-secondary my-2 " href="#carouselJeu" role="button" data-slide="next" title="Suivant">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+    </div>
+
+
+
+
+
+@endsection
+
+@push('scripts')
+    <script>
+
+        $(document).ready(function(){
+
+            $('.selecteur_jeu_choisi').on('click', function(event){
+                    event.preventDefault();
+                    $('#jeu_choisi').val( $(this).val() );
+                    $('#form_goto_session_jeu').submit();
+
+                }
+            );
+
+            $("#next2").click(function(){
+                $("#panel1").hide( );
+                $("#panel3").hide( );
+                $("#panel2").show();
+
+            });
+
+            $("#next3").click(function(){
+                $("#panel1").hide( );
+                $("#panel2").hide( );
+                $("#panel3").show();
+
+            });
+
+            @if(session('flash_errors'))
+            $('#panel2').show();
+            $('#panel1').hide();
+            $('#panel3').hide();
+            $('.illustration-principale').hide();
+            $('#changelog').hide();
+                    @endif
+
+            var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+                n = 0;
+            $(document).keydown(function (e) {
+                if (e.keyCode === k[n++]) {
+                    if (n === k.length) {
+                        n = 0;
+                        $("#jeu_choisi").append(new Option("Pour la Reine !", "999"));
+                        return false;
+                    }
+                }
+                else {
+                    n = 0;
+                }
+            });
+
+            <?php if( isset($_GET['code']) && $_GET['code'] == 'konami') { ?>
+            $("#jeu_choisi").append(new Option("Pour la Reine !", "999"));
+            <?php } ?>
+
+        });
+
+        function duplicateEmail(element){
+            var email = $(element).val();
+            $.ajax({
+                type: "POST",
+                url: '{{url('jeux/liste')}}',
+                data: {
+                    email:email,
+                    "_token": "{{ csrf_token() }}"
+                },
+                dataType: "json",
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                success: function(res) {
+                    if(res.exists){
+                        swal({
+                            title: "Email invalide",
+                            text: "L'adresse "+ $(element).val()+ " est déjà enregistrée dans notre panel. Merci d'utiliser une autre adresse" ,
+                            icon: "warning",
+                            buttons: {
+                                text: 'Modifier mon adresse email',
+                            },
+                            dangerMode: true,
+                        }).then((willEdit) => {
+                            $(element).focus();
+                        });
+                        $(element).val("");
+                        $(element).focus();
+                    }else{
+
+                    }
+                },
+                error: function (jqXHR, exception) {
+
+                }
+            });
+        }
+    </script>
+@endpush
