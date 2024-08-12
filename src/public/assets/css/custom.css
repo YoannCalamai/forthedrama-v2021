@@ -1,0 +1,81 @@
+
+.bigselect{
+    font-size: 25px;
+    line-height: 35px;
+    text-align:center;
+    height:69px;
+    padding-top: 0px !important;
+    color: #FFFFFF;
+}
+.bigselect option{
+    color:#000000;
+}
+
+.bigselect option{
+    text-align-last: center; text-align: center;
+
+    -ms-text-align-last: center;
+    -moz-text-align-last: center; text-align-last: center;
+}
+
+.bigselect:focus,.bigselect:active,.bigselect:focus-within,.bigselect:active{
+    color: #FFFFFF;
+}
+
+.bigselect:active {
+    color: #FFFFFF;
+    box-shadow: inset 368px 38px #9124A3;
+    font-weight: bolder;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.bigoption{
+    color: #FFFFFF;
+}
+
+select {
+    -webkit-appearance: none;
+    /*webkit browsers */
+    -moz-appearance: none;
+    /*Firefox */
+    appearance: none;
+    /* modern browsers */
+    border-radius: 0;
+}
+
+select {
+    text-align: center;
+    text-align-last: center;
+    /* webkit*/
+}
+option {
+    text-align: left;
+    /* reset to left*/
+}
+
+.blanc{
+    color: #FFFFFF !important;
+}
+
+.instruction{
+    border: 10px solid #517be9;
+}
+.question{
+    border: 10px solid #9124A3;
+}
+.finale{
+    border: 10px solid #F44336;
+}
+
+page[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+}
+
+.card{
+    min-height: 132px;
+}
+

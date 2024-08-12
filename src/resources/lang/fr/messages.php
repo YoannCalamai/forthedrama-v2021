@@ -1,0 +1,40 @@
+<?php
+
+return [
+    'nouvellepartie'  => 'Nouvelle partie',
+    'rejoindre'       => 'Rejoindre',
+    'historique'       => 'Historique',
+    'titrerejoindre'   => 'Rejoindre une partie',
+    'rejoindreplaceholder'  => 'Entre ici le code d\'une partie en cours pour la rejoindre',
+    'ensavoirplus'  => 'en savoir plus',
+    'jouer'  => 'Jouer',
+    'precedent'  => 'Précédent',
+    'suivant'  => 'Suivant',
+    'jeuxdispos'  => 'Jeux disponibles',
+    'jeuxdisposintro'  => 'Les jeux présentés sur cette application sont dérivés du jeu d\'Alex Roberts For The Queen, édité par Evil Hat Production.  <br><a href="https://forthequeengame.com/" target="_blank">voir la licence</a>',
+    'telecharger'  => 'Télécharger PDF',
+    'duree'  => 'Durée de la partie',
+    'duree1'  => 'Rapide - environ 10 cartes ( < 1h )',
+    'duree2'  => 'Moyenne - environ 20 cartes ( 2h )',
+    'duree3'  => 'Longue - environ 30 cartes ( 3h )',
+    'duree4'  => 'Très Longue - toutes les cartes ( > 4h )',
+    'playtexte1'  => 'La partie va commencer',
+    'playtexte2'  => 'Les autres joueurs peuvent rejoindre la partie grâce à ce code :',
+    'cartex'  => 'Carte X',
+    'cartefinale'  => 'Carte finale !',
+    'languefr' => 'Français',
+    'langueen' => 'English',
+    'menuaide' => 'Aide',
+    'menucreersonjeu' => 'Créer un jeu',
+    'login' => 'Connexion',
+    'aidetexte' => 'Comment jouer ?',
+    'historiquetexte' => 'Suivre les évolutions ',
+    'propulse' => 'Propulsé avec du ❤ par cestpasdujdr.fr',
+    'mentionslegales' => 'Mentions Légales',
+    'joindreplaceholder' => 'CODE DE LA PARTIE',
+    'creerjeu' => 'Créer un jeu',
+    'podcasts' => 'Podcasts',
+
+
+
+    ];
